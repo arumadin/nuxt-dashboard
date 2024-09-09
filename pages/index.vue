@@ -96,7 +96,7 @@ onMounted(() => {
                 <h1>Dashboard</h1>
                 <p>All informations about your finances.</p>
             </div>
-            <div class="w-[120px] bg-neutral-200 h-12"></div>
+            <ProductNew />
         </header>
         <main>
             <Tabs default-value="Today" @click="setCategory">
