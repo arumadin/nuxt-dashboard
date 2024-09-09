@@ -11,7 +11,7 @@
                 <SidebarMenu />
             </div>
         </div>
-        <div class="hidden lg:flex w-[250px] h-screen flex flex-col justify-between border-r">
+        <div class="hidden lg:flex w-[250px] h-screen flex-col justify-between border-r">
             <SidebarMenu />
         </div>
     </div>

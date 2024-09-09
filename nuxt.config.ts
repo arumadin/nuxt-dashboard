@@ -2,7 +2,7 @@
 import * as shadcn from 'shadcn-nuxt'
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxt/icon'],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxt/icon', 'nuxt-highcharts'],
 
   shadcn: {
     prefix: '',

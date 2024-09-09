@@ -2,15 +2,15 @@
     <div>
         <header class="flex items-center gap-2 p-4 hover:scale-[101%] transition cursor-pointer">
             <Logo />
-            <p class="font-bold text-lg">Nuxt Dashboard</p>
+            <p class="font-bold text-lg text-black">Nuxt Dashboard</p>
         </header>
         <div class="px-4 grow">
             <div class="grid gap-2">
-                <div v-for="(item, index) in items" :key="index"
+                <NuxtLink :to="item.path" v-for="(item, index) in items" :key="index"
                 class="flex items-center gap-2 px-2 py-1 transition rounded cursor-pointer hover:bg-neutral-100">
                     <Icon size="20" :name="item.icon" color="black"/>
                     {{ item.title }}
-                </div>
+                </NuxtLink>
             </div>
         </div>
     </div>
@@ -20,27 +20,27 @@
 const items = ref ([
     {
         title: "Overview",
-        path: "/overview",
+        path: "/",
         icon: "ri:apps-2-line"
     },
     {
-        title: "Transaction",
-        path: "/transaction",
+        title: "Transactions",
+        path: "/transactions",
         icon: "ri:arrow-left-right-fill"
     },
     {
         title: "Account",
-        path: "/account",
+        path: "/",
         icon: "ri:account-circle-line"
     },
     {
         title: "Contacts",
-        path: "/contacts",
+        path: "/",
         icon: "ri:contacts-book-2-line"
     },
     {
         title: "Settings",
-        path: "settings",
+        path: "",
         icon: "ri:settings-3-line"
     },
 ])
