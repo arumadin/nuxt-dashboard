@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Card from '~/components/Card.vue';
+
 const list = [
     {
         title: "Today",
@@ -16,7 +18,7 @@ const list = [
 ]
 
 type dataProps = Ref<number[]>
-let data:dataProps = ref([])
+let data: dataProps = ref([])
 
 let currentCategory = ref('today')
 
@@ -54,6 +56,33 @@ function generateRandomData(number = 24) {
     return val;
 }
 
+const cards = [
+    {
+        title: "Sales",
+        progression: 12,
+        amount: 84.44,
+        label: "View sales",
+        description: "Sales of September 2024",
+        icon: "solar:ticket-sale-outline"
+    },
+    {
+        title: "Refund",
+        progression: 8,
+        amount: 84.44,
+        label: "View refunds",
+        description: "Refunds since beginning of year",
+        icon: "heroicons-outline:receipt-refund"
+    },
+    {
+        title: "Payouts",
+        progression: 14,
+        amount: 899.99,
+        label: "View payouts",
+        description: "Payouts of this week",
+        icon: "tabler:zoom-money"
+    }
+]
+
 onMounted(() => {
     generateRandomData();
 })
@@ -83,10 +112,8 @@ onMounted(() => {
             </Tabs>
         </main>
         <footer>
-            <div class="flex flex-wrap justify-between flex-wrap">
-                <div class="w-[30%] h-[240px] bg-neutral-200"></div>
-                <div class="w-[30%] h-[240px] bg-neutral-200"></div>
-                <div class="w-[30%] h-[240px] bg-neutral-200"></div>
+            <div class="grid gap-4 lg:grid-cols-3">
+                <Card v-for="(item, index) in cards" :key="index" :card="item"></Card>
             </div>
         </footer>
     </div>
