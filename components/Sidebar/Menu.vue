@@ -40,7 +40,7 @@ const items = ref ([
     },
     {
         title: "Settings",
-        path: "",
+        path: "/",
         icon: "ri:settings-3-line"
     },
 ])

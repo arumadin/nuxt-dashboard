@@ -1,7 +1,7 @@
 <template>
     <AlertDialog :open="open">
         <AlertDialogTrigger @click="open = true">
-            <Button>Add a new product</Button>
+            <Button as="div">Add a new product</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
             <AlertDialogHeader>
