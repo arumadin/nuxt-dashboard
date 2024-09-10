@@ -60,7 +60,7 @@ const cards = [
     {
         title: "Sales",
         progression: 12,
-        amount: 84.44,
+        amount: 198.9,
         label: "View sales",
         description: "Sales of September 2024",
         icon: "solar:ticket-sale-outline"
