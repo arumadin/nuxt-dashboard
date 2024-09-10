@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import Card from '~/components/Card.vue';
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
 const list = [
     {
         title: "Today",
-        component: resolveComponent("TabsToday")
     },
     {
         title: "Week",
@@ -99,15 +100,14 @@ onMounted(() => {
             <ProductNew />
         </header>
         <main>
-            <Tabs default-value="Today" @click="setCategory">
-                <TabsList class="max-w-[400px]">
+            <Tabs default-value="Today" >
+                <TabsList class="max-w-[400px]" @click="setCategory" >
                     <TabsTrigger v-for="item, index in list" :key="index" :value="item.title">
                         {{ item.title }}
                     </TabsTrigger>
                 </TabsList>
-                <TabsContent v-for="item, index in list" :key="index" :value="item.title">
+                <TabsContent class="w-[100%]" v-for="item, index in list" :key="index" :value="item.title">
                     <Chart v-if="data.length > 0" :currentCategory="currentCategory" :data="data" />
-                    <!-- {{ item.title }} -->
                 </TabsContent>
             </Tabs>
         </main>

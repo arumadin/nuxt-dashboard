@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 let props = defineProps(['currentCategory', 'data'])
-let data = props.data || [1, 2, 3]
+let data = [...props.data] || []
 let currentCategory = props.currentCategory || "today"
 
 // Create categories (x-axis)
@@ -10,7 +10,7 @@ type categoriesProp = Ref<{
 }>
 
 let categories: categoriesProp = ref({
-    'today': [
+    today: [
         '00:00',
         '01:00',
         '02:00',
@@ -36,7 +36,7 @@ let categories: categoriesProp = ref({
         '22:00',
         '23:00',
     ],
-    'week': [
+    week: [
         'Sunday',
         'Monday',
         'Tuesday',
@@ -46,14 +46,14 @@ let categories: categoriesProp = ref({
         'Saturday',
         'Sunday'
     ],
-    'year': [
+    year: [
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
         'Oct', 'Nov', 'Dec'
     ]
 })
 
 // Define chart
-const chartOptions = computed(() => (
+let chartOptions = computed(() => (
     {
         chart: {
             type: 'line',
@@ -69,7 +69,7 @@ const chartOptions = computed(() => (
             text: 'Chart Title'
         },
         xAxis: {
-            categories: categories.value[currentCategory.value]
+            categories: categories.value[currentCategory]
         },
         yAxis: {
             gridLineColor: 'transparent',
@@ -100,7 +100,7 @@ const chartOptions = computed(() => (
                     [1, 'rgba(200, 105, 219, 1)']
                 ]
             },
-            data: props.data
+            data
         }]
     }
 ))
