@@ -66,7 +66,7 @@ const chartOptions = computed(() => (
             enabled: false
         },
         title: {
-            text: 'chart title xyz'
+            text: 'Chart Title'
         },
         xAxis: {
             categories: categories.value[currentCategory.value]
@@ -126,12 +126,10 @@ function generateMonth() {
 
     let month = generateMonthDates()
     categories = ({ ...categories, ...month })
-    console.log(categories)
     return month
 }
 
 onMounted(() => {
-    console.log(props.data)
     generateMonth()
 })
 </script>
