@@ -35,7 +35,7 @@ function generateRandomData(numObjects: number) {
 }
 
 onMounted(() => {
-    generateRandomData(10)
+    generateRandomData(19)
 })
 
 </script>
