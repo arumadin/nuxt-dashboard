@@ -13,6 +13,7 @@
         </div>
         <div class="hidden lg:flex w-[250px] h-screen flex-col justify-between border-r">
             <SidebarMenu />
+            <UserItem />
         </div>
     </div>
 </template>
