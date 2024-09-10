@@ -1,7 +1,6 @@
 <template>
     <div>
         <div class="z-50 flex lg:hidden items-center justify-between w-full h-full p-4">
-            <!-- <SidebarMenu /> -->
             <Logo />
             <Icon size="30" class="z-50 cursor-pointer left-2 top-2 ml-2" name="mingcute:menu-line"
                 @click="open = true" />
@@ -19,7 +18,7 @@
 </template>
 
 <script setup>
-const open = ref(true)
+const open = ref(false)
 </script>
 
 <style lang="scss" scoped></style>
