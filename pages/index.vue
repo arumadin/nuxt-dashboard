@@ -92,8 +92,8 @@ onMounted(() => {
 
 <template>
     <div class="grid w-full gap-2">
-        <header class="flex items-start justify-between mb-6">
-            <div class="grow">
+        <header class="flex flex-col md:flex-row items-start justify-between mb-6">
+            <div class="grow mb-4 md:m-0">
                 <h1>Dashboard</h1>
                 <p>All informations about your finances.</p>
             </div>
