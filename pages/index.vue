@@ -44,7 +44,7 @@ const setCategory = (e: Event) => {
             generateRandomData(12);
             break;
         default:
-            generateRandomData(7);
+            generateRandomData(24);
     }
 }
 

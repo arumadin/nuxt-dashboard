@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 let props = defineProps(['currentCategory', 'data'])
-let data = [...props.data] || []
-let currentCategory = props.currentCategory || "today"
+let data = computed(() => props.data)
+// let currentCategory = props.currentCategory || "today"
 
 // Create categories (x-axis)
 type categoriesProp = Ref<{
@@ -69,7 +69,7 @@ let chartOptions = computed(() => (
             text: 'Chart Title'
         },
         xAxis: {
-            categories: categories.value[currentCategory]
+            categories: categories.value[props.currentCategory]
         },
         yAxis: {
             gridLineColor: 'transparent',
@@ -100,7 +100,7 @@ let chartOptions = computed(() => (
                     [1, 'rgba(200, 105, 219, 1)']
                 ]
             },
-            data
+            data: data.value
         }]
     }
 ))
@@ -120,18 +120,18 @@ function generateMonth() {
             let monthString = ("0" + currentMonth).slice(-2)
             monthDates.push(monthString + "/" + dayString)
         }
-
         return monthDates
     }
 
-    let month = generateMonthDates()
-    categories = ({ ...categories, ...month })
+    let month = generateMonthDates() 
+    categories.value = ({...categories.value, month})
     return month
 }
 
 onMounted(() => {
     generateMonth()
 })
+
 </script>
 
 <template>
