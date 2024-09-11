@@ -38,7 +38,11 @@ const setCategory = (e: Event) => {
         case 'month':
             // const daysInMonth = categories.value['month'].length
             // generateRandomData(daysInMonth);
-            generateRandomData(31)
+            let currentDate = new Date();
+            let currentMonth = currentDate.getMonth() + 1
+            let currentYear = currentDate.getFullYear()
+            let daysInMonth = new Date(currentYear, currentMonth, 0).getDate()
+            generateRandomData(daysInMonth)
             break;
         case 'year':
             generateRandomData(12);
