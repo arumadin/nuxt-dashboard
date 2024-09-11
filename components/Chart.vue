@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 let props = defineProps(['currentCategory', 'data'])
-let data = computed(() => props.data)
+// let data = computed(() => props.data)
 // let currentCategory = props.currentCategory || "today"
 
 // Create categories (x-axis)
@@ -100,7 +100,7 @@ let chartOptions = computed(() => (
                     [1, 'rgba(200, 105, 219, 1)']
                 ]
             },
-            data: data.value
+            data: props.data
         }]
     }
 ))
